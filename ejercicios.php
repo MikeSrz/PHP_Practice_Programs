@@ -79,9 +79,24 @@
            <p><label for="nombre">Ingresa el nombre: </label>
                 <input type="nombre" name="nombre" id="nombre10"></p>
         </div>
-
+        
+        
+        
+        <h2>Ejercicio 3</h2>
+         <form method="get">
+                <p><label for="number">Ingresa un valor positivo: </label>
+                <input type="number" name="myNumber" id="number" min="0"></p>
+                <p><input type="submit" value="enviar"></p>
         <?php
-
+            $counter = 0;
+            $number = $_GET['myNumber'];
+            while ($number <= 10) {
+                $number = $number/10;
+                $count +=1;
+            }
+            $counter+=1;
+            echo "El número tiene $counter cifras"
         ?>
+
 </body>
 </html>
