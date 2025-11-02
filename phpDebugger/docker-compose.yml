@@ -1,0 +1,16 @@
+services:
+  phpdebugger:
+    #Construir el Dockerfile que tiene php
+    build: .
+    container_name: phpdebugger
+    ports: 
+      - "9999:80"
+    volumes:
+      # BINDMOUNT x:y x= Tu ruta y= ruta default del servicio del contenedor
+      - /home/sasuk/phpDebugging/src:/var/www/html
+    networks:
+    - phpnet
+
+networks:
+  phpnet:
+
