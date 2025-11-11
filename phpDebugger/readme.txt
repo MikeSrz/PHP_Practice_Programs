@@ -8,7 +8,7 @@ Requerimientos:
 Paso a paso:
 1. Clonar o descargar esta carpeta del repositorio.
 2. Ejecutar los comandos 
-	docker-compose build . #Construye la imagen del Dockerfile
+	docker-compose build  #Construye la imagen del Dockerfile
 	docker-compose up #Levanta el conteneddor
 	#El puerto 80 del contenedor estará mapeado en el puerto 9999[Editable]
 
