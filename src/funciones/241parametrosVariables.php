@@ -30,7 +30,7 @@
     }
 //4434 longitud-1 = 3  - 2 => 1
 //
-    function quitarPorDetras(int $num, int $pos){
+    function digitoN(int $num, int $pos){
         $len = cuentaDigitos($num);
         if ($pos > $len) {
             return "No se puede hacer";
@@ -51,10 +51,34 @@
             }
         }
     }
+    //123%100 => 23
     function quitarPorDetras(int $num, int $cant){
-        
+        $len = cuentaDigitos($num);
+        if ($cant > $len) {
+            return "No se puede hacer";
+        }
+        else if ($len == 1) {
+            return $num;
+        }
+        return $num%(10**$cant);
     }
-    echo quitarPorDetras(4434,2);
+    //123%2
+    function quitarPorDelante(int $num, int $cant){
+        $len = cuentaDigitos($num);
+        if ($cant > $len) {
+            return "No se puede hacer";
+        }
+        else if ($len == 1) {
+            return $num;
+        }
+        $extract = $len - $cant;
+        return ($num-($num%10**$extract))/10**$extract;
+    }
+    echo digitoN(4434,2);
+    echo "<br>";
+    echo quitarPorDetras(2002,4);
+    echo "<br>";
+    echo quitarPorDelante(2002, 1);
     echo "<br>";
     $max = devuelveValores(1,3,4,5,6,100,2);
     echo "<p>".concatenar(1, 2, 3)."</p>";
