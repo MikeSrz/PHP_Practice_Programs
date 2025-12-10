@@ -1,15 +1,20 @@
 <?php
     echo "<h2>Ejercicio0(repaso)</h2>";
     //Formas de declarar un array en PHP
+    $miArray = [];
     $frutas = array("naranja", "pera", "manzana");
     $frutas2 = ["naranja", "pera", "manzana"];
     echo $frutas2[0];
+    //TAMAÑO DEL ARRAY
     $tam = count($frutas); // count() Devuelve el tamaño del array
     echo "<br>"; //Salto de linea.
     echo " $tam"; //
-    echo "<h3>Recorriendo array con foreach</h3>";
+    echo "<h3>Recorriendo array con foreach y con indice</h3>";
     foreach ($frutas as $fruta) {
         echo "$fruta <br>";
+    }
+    for ($i=0; $i < count($frutas);$i++){
+        $frutas[$i]
     }
 
     echo "<h3> Arrays asociativos</h3>";
@@ -17,7 +22,7 @@
     $capitales = ["Italia" => "Roma", "Francia" => "Paris", "Portugal" => "Lisboa"];
     $capitalFrancia = $capitales["Francia"];
     echo "$capitalFrancia";
-
+    
     $capitales["España"] = "Madrid"; //Añadiendo capital.
 
     echo "<h3>Recorriendo un array asociativo";
@@ -29,7 +34,8 @@
     foreach ($capitales as $k => $v)
         echo "$k = $v <br>";
 
-    //FUNCIONES DE ARRAYS
+    /////////////////////////////////
+    //FUNCIONES DE ARRAYS /////////
     print_r($frutas); //Imprime un array.
     array_push($frutas, "piña"); //pushea "piña".
     array_pop($frutas); //Elimina el último elemento del array
