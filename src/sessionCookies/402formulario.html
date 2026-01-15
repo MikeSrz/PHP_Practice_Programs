@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario 402</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 20px auto; }
+        fieldset { margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .inline-label { display: inline; font-weight: normal; margin-right: 10px; }
+        input[type="text"], input[type="email"], input[type="url"], input[type="number"] {
+            width: 100%; padding: 5px; margin-bottom: 10px;
+        }
+        button { padding: 10px 20px; cursor: pointer; background-color: #28a745; color: white; border: none; }
+    </style>
+</head>
+<body>
+
+    <h2>Encuesta de Usuario</h2>
+
+    <form action="402formulario.php" method="POST">
+        
+        <label for="nombre">Nombre y Apellidos:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="url">URL Página Personal:</label>
+        <input type="url" id="url" name="url" placeholder="https://tuweb.com">
+
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" id="hombre" name="sexo" value="Hombre" checked>
+            <label for="hombre" class="inline-label">Hombre</label>
+
+            <input type="radio" id="mujer" name="sexo" value="Mujer">
+            <label for="mujer" class="inline-label">Mujer</label>
+
+            <input type="radio" id="otro" name="sexo" value="Otro">
+            <label for="otro" class="inline-label">Otro</label>
+        </fieldset>
+
+        <label for="convivientes">Número de convivientes en el domicilio:</label>
+        <input type="number" id="convivientes" name="convivientes" min="0" value="0">
+
+        <fieldset>
+            <legend>Aficiones (Selecciona al menos una)</legend>
+            <input type="checkbox" name="aficiones[]" value="Programación"> Programación<br>
+            <input type="checkbox" name="aficiones[]" value="Deporte"> Deporte<br>
+            <input type="checkbox" name="aficiones[]" value="Cine"> Cine<br>
+            <input type="checkbox" name="aficiones[]" value="Lectura"> Lectura<br>
+            <input type="checkbox" name="aficiones[]" value="Viajar"> Viajar
+        </fieldset>
+
+        <label for="menu">Menú Favorito (Mantén Ctrl/Cmd para seleccionar varios):</label>
+        <select id="menu" name="menu[]" multiple size="5" style="width: 100%; margin-bottom: 15px;">
+            <option value="Pizza">Pizza Carbonara</option>
+            <option value="Sushi">Bandeja de Sushi</option>
+            <option value="Hamburguesa">Hamburguesa Completa</option>
+            <option value="Ensalada">Ensalada César</option>
+            <option value="Paella">Paella Valenciana</option>
+        </select>
+
+        <button type="submit">Enviar Datos</button>
+    </form>
+
+</body>
+</html>
