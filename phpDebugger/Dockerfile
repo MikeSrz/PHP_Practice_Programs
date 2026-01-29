@@ -2,7 +2,8 @@ FROM php:8.4-apache
 #INSTALACIÓN DE XDEBUG
 RUN apt-get update \
 	&& pecl install xdebug \
-	&& docker-php-ext-enable xdebug 
+	&& docker-php-ext-enable xdebug \
+	&& docker-php-ext-install pdo pdo_mysql
 
 #CONFIGURACIÓN DE ARCHIVO DE CONFIGURACIÓN DE XDEBUG
 RUN echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so | head -n 1)" > /usr/local/etc/php/conf.d/xdebug.ini \
