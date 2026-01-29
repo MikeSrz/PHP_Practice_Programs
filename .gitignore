@@ -1,0 +1,77 @@
+# =========================
+# Docker
+# =========================
+# Contenedores y volúmenes temporales
+**/data/mysql/
+**/.docker/
+docker-compose.override.yml
+
+# =========================
+# MySQL dumps / initdb
+# =========================
+*.sql
+*.sql.gz
+!/initdb/*.sql   # permitimos versionar tus SQL de inicialización
+
+# =========================
+# PHP / Composer
+# =========================
+/vendor/
+composer.lock
+.phpunit.result.cache
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Logs, cache y tmp
+# =========================
+*.log
+logs/
+cache/
+tmp/
+
+# =========================
+# IDEs / Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Sistema Operativo
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Node (por si usas frontend)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# =========================
+# Misc / Backups
+# =========================
+*.bak
+*.old
+*.orig
+*.tmp
+
+# =========================
+# Ignorar archivos sensibles que Docker podría crear
+# =========================
+**/docker-compose.override.yml
+**/docker-data/
+**/phpDebugger/data/mysql/
+
+# =========================
+# Permitir solo SQL inicial
+# =========================
+!phpDebugger/initdb/*.sql
