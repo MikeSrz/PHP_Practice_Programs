@@ -1,0 +1,6 @@
+Resumen rápido de métodos PDO hasta ahora:
+query($sql): Para SELECT estático (trae datos).
+
+prepare($sql) + execute(): Para INSERT/UPDATE/SELECT con variables (seguridad).
+
+exec($sql): Para CREATE/DROP/ALTER (cambios de estructura) o DELETE masivos estáticos.

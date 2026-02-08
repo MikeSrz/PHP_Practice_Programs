@@ -1,16 +1,18 @@
 <?php
     #Cargando parámetros
-    $host=getenv('DB_HOST');
-    $usuario=getenv('DB_USERNAME');
-    $password=getenv('DB_PASSWORD');
-    $database="star_wars";
-    $dsn = "mysql:host=$host;dbname=$database";
-    
-    try {
-        $conexion = new PDO($dsn, $usuario, $password);
-        $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Se ha establecido la conexión.";
-    } catch (PDOException $e){
-        echo 'Falló la conexion: '.$e->getMessage();
+    $HOST=getenv('DB_HOST');
+    $USUARIO=getenv('DB_USERNAME');
+    $PASSWORD=getenv('DB_PASSWORD');
+    $DATABASE="star_wars";
+    $DSN = "mysql:host=$HOST;dbname=$DATABASE";
+
+
+    function conectarDB($route, $user, $pass) {
+        try {
+            $conexion = new PDO($route, $user, $pass);
+            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conexion;
+        } catch (PDOException $e){
+            die('Falló la conexion: '.$e->getMessage());
+        }
     }
-?>
